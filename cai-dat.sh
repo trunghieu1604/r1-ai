@@ -1,6 +1,6 @@
 #!/bin/bash
 APK_URL="https://github.com/trunghieu1604/r1-ai/releases/download/v1.0/Phicomm-R1.apk"
-APK_PATH="$HOME/ai-box-plus.apk"
+APK_PATH="$HOME/Phicomm-R1.apk"
 ADB_DEVICE="192.168.43.1:5555"
 APK_REMOTE_PATH="/data/local/tmp/PHicomm-R1.apk"
 PACKAGE_NAME="info.dourok.voicebot"
@@ -13,15 +13,15 @@ ADB_CMD_RETRY_DELAY=2
 ADB="adb"
 
 log_info() {
-    echo "[AIBOX+][INFO] $*"
+    echo "[AIBOT][INFO] $*"
 }
 
 log_warn() {
-    echo "[AIBOX+][WARN] $*"
+    echo "[AIBOT][WARN] $*"
 }
 
 log_error() {
-    echo "[AIBOX+][ERROR] $*" >&2
+    echo "[AIBOT][ERROR] $*" >&2
 }
 
 fail() {
