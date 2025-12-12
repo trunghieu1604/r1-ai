@@ -88,7 +88,8 @@ adb_exec() {
         fi
 
         if echo "$out" | grep -Eiq "no devices|device offline|failed to connect|cannot connect|connection refused|device not found"; then
-            log_warn "Mat ket noi ADB khi chay '$*' (lan $attempt/$ADB_CMD_MAX_RETRY). Thu ket noi lai..."
+            log_warn "Mất kết nối ADB khi chạy '$*' \(lần $attempt/$ADB_CMD_MAX_RETRY\). Thử kết nối lại..."
+
             reconnect_adb
             continue
         fi
