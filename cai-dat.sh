@@ -1,8 +1,8 @@
 #!/bin/bash
-APK_URL="APK_URL="https://github.com/trunghieu1604/r1-ai/releases/download/v1.0/Phicomm-R1.apk"
-APK_PATH="$HOME/Phicomm-R1.apk"
+APK_URL="https://github.com/trunghieu1604/r1-ai/releases/download/v1.0/Phicomm-R1.apk"
+APK_PATH="$HOME/ai-box-plus.apk"
 ADB_DEVICE="192.168.43.1:5555"
-APK_REMOTE_PATH="/data/local/tmp/Phicomm-R1.apk"
+APK_REMOTE_PATH="/data/local/tmp/PHicomm-R1.apk"
 PACKAGE_NAME="info.dourok.voicebot"
 RECONNECT_COUNT=0
 MAX_RECONNECT=999
@@ -13,15 +13,15 @@ ADB_CMD_RETRY_DELAY=2
 ADB="adb"
 
 log_info() {
-    echo "[Trhieu][INFO] $*"
+    echo "[AIBOX+][INFO] $*"
 }
 
 log_warn() {
-    echo "[Trhieu][WARN] $*"
+    echo "[AIBOX+][WARN] $*"
 }
 
 log_error() {
-    echo "[Trhieu][ERROR] $*" >&2
+    echo "[AIBOX+][ERROR] $*" >&2
 }
 
 fail() {
@@ -88,8 +88,7 @@ adb_exec() {
         fi
 
         if echo "$out" | grep -Eiq "no devices|device offline|failed to connect|cannot connect|connection refused|device not found"; then
-            log_warn "Mất kết nối ADB khi chạy '$*' \(lần $attempt/$ADB_CMD_MAX_RETRY\). Thử kết nối lại..."
-
+            log_warn "Mat ket noi ADB khi chay '$*' (lan $attempt/$ADB_CMD_MAX_RETRY). Thu ket noi lai..."
             reconnect_adb
             continue
         fi
@@ -189,7 +188,7 @@ step_uninstall_existing() {
             log_warn "Khong the go cai phien ban cu: $uninstall_out"
         fi
     else
-        log_info "Thiet bi da san sang cai dat."
+        log_info "Thiet bi da san sang cai dat VoiceBot."
     fi
 }
 
@@ -205,7 +204,7 @@ step_install_apk() {
     local retry=0
     while [ "$retry" -lt "$MAX_INSTALL_RETRY" ]; do
         retry=$((retry + 1))
-        log_info "Cai dat ung dung (lan $retry/$MAX_INSTALL_RETRY)..."
+        log_info "Cai dat VoiceBot (lan $retry/$MAX_INSTALL_RETRY)..."
 
         local out
         out=$(adb_exec shell /system/bin/pm install -r "$APK_REMOTE_PATH" || true)
@@ -233,13 +232,13 @@ step_install_apk() {
     done
 
     restore_packages
-    fail "Khong the cai dat."
+    fail "Khong the cai dat VoiceBot."
 }
 
 install_success() {
-    log_info "Khoi dong ung dung..."
+    log_info "Khoi dong ung dung VoiceBot..."
     adb_exec shell am start -n "$PACKAGE_NAME/.java.activities.MainActivity" >/dev/null || true
-    log_info "Hoan tat. San sang su dung."
+    log_info "Hoan tat. VoiceBot san sang su dung."
 }
 
 check_adb
