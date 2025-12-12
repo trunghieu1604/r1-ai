@@ -1,5 +1,5 @@
 #!/bin/bash
-APK_URL="APK_URL="https://drive.google.com/uc?export=download&id=1bqwbQAOmWGvSEI7mhVTMUvkV62F4_1uR"
+APK_URL="APK_URL="https://github.com/trunghieu1604/r1-ai/releases/download/v1.0/Phicomm-R1.apk"
 APK_PATH="$HOME/Phicomm-R1.apk"
 ADB_DEVICE="192.168.43.1:5555"
 APK_REMOTE_PATH="/data/local/tmp/Phicomm-R1.apk"
