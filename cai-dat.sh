@@ -13,15 +13,15 @@ ADB_CMD_RETRY_DELAY=2
 ADB="adb"
 
 log_info() {
-    echo "[AIBOT][INFO] $*"
+    echo "[Trhieu][INFO] $*"
 }
 
 log_warn() {
-    echo "[AIBOT][WARN] $*"
+    echo "[Trhieu][WARN] $*"
 }
 
 log_error() {
-    echo "[AIBOT][ERROR] $*" >&2
+    echo "[Trhieu][ERROR] $*" >&2
 }
 
 fail() {
