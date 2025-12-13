@@ -32,7 +32,7 @@ fail() {
 check_adb() {
     log_info "Kiem tra adb..."
     if ! command -v adb >/dev/null 2>&1; then
-        log_warn "adb chua duoc cai. Dang cai dat android-tools..."
+        log_warn "Adb chua duoc cai. Dang cai dat android-tools..."
         # Check if apk command is available (Alpine Linux), neu ton tai thi su dung no de cai dat
         if command -v apk >/dev/null 2>&1; then
             apk add --no-cache android-tools
