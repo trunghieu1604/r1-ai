@@ -1,8 +1,8 @@
 #!/bin/bash
-APK_URL="https://github.com/trunghieu1604/r1-ai/releases/download/v1.0/PhicomR1.apk"
-APK_PATH="$HOME/PhicomR1.apk"
+APK_URL="https://github.com/trunghieu1604/r1-ai/releases/download/v1.0/Phicomm-R1.apk"
+APK_PATH="$HOME/Phicomm-R1.apk"
 ADB_DEVICE="192.168.43.1:5555"
-APK_REMOTE_PATH="/data/local/tmp/PhicomR1.apk"
+APK_REMOTE_PATH="/data/local/tmp/Phicomm-R1.apk"
 PACKAGE_NAME="info.dourok.voicebot"
 RECONNECT_COUNT=0
 MAX_RECONNECT=999
