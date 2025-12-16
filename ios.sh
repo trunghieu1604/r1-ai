@@ -1,6 +1,6 @@
 #!/bin/bash
 APK_NAME="Phicomm-R1.apk"
-APK_URL="https://github.com/trunghieu1604/r1-ai/releases/download/v1.0/Phicomm-R1.apk/$APK_NAME"
+APK_URL="https://github.com/trunghieu1604/r1-ai/releases/download/v1.0/$APK_NAME"
 APK_PATH="$HOME/$APK_NAME"
 ADB_DEVICE_IP="192.168.43.1"
 ADB_DEVICE_PORT="5555"
