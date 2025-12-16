@@ -1,7 +1,7 @@
 #!/bin/bash
 APK_URL="https://github.com/trunghieu1604/r1-ai/releases/download/v1.0/Phicomm-R1.apk"
 APK_PATH="$HOME/Phicomm-R1.apk"
-ADB_DEVICE="192.168.43.1:5555"
+ADB_DEVICE="Phicomm R1"
 APK_REMOTE_PATH="/data/local/tmp/Phicomm-R1.apk"
 PACKAGE_NAME="info.dourok.voicebot"
 RECONNECT_COUNT=0
@@ -50,7 +50,7 @@ wait_for_wifi() {
     local wifi_prompt_shown=0
     while true; do
         if ping -c 1 -W 1 "$ADB_DEVICE" >/dev/null 2>&1; then
-            log_info "Da ping thanh cong $ADB_DEVICE."
+            log_info "Da ket noi thanh cong $ADB_DEVICE."
             return
         fi
         if [ "$wifi_prompt_shown" -eq 0 ]; then
@@ -232,13 +232,13 @@ step_install_apk() {
     done
 
     restore_packages
-    fail "Khong the cai dat VoiceBot."
+    fail "Khong the cai dat ung dung."
 }
 
 install_success() {
-    log_info "Khoi dong ung dung VoiceBot..."
+    log_info "Khoi dong ung dung Phicomm-R1..."
     adb_exec shell am start -n "$PACKAGE_NAME/.java.activities.MainActivity" >/dev/null || true
-    log_info "Hoan tat. VoiceBot san sang su dung."
+    log_info "Hoan tat. Loa da san sang su dung."
 }
 
 check_adb
