@@ -65,7 +65,7 @@ step_reboot_device() {
 
 step_hide_packages() {
     log_info "Vo hieu hoa bloatware..."
-    local apps="airskill exceptionreporter systemtool otaservice productiontest bugreport"
+    local apps="device airskill exceptionreporter systemtool otaservice productiontest bugreport"
     for app in $apps; do
         log_info "Hide com.phicomm.speaker.$app"
         adb_exec shell /system/bin/pm hide "com.phicomm.speaker.$app"
@@ -73,8 +73,8 @@ step_hide_packages() {
 }
 
 step_unhide_packages() {
-    log_info "Kich hoat lai player va device"
-    local apps="player device"
+    log_info "Kich hoat lai player"
+    local apps="player"
     for app in $apps; do
         log_info "Unhide com.phicomm.speaker.$app"
         adb_exec shell /system/bin/pm unhide "com.phicomm.speaker.$app"
