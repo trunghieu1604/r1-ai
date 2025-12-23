@@ -1,6 +1,5 @@
 #!/bin/sh
 
-VERSION="v3"
 APK_NAME="Phicomm-R1.apk"
 APK_URL="https://github.com/trunghieu1604/r1-ai/releases/download/v1.0/$APK_NAME"
 APK_PATH="$HOME/$APK_NAME"
