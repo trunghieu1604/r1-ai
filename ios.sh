@@ -16,15 +16,15 @@ ADB_CMD_RETRY_DELAY=2
 ADB="adb"
 
 log_info() {
-    echo "[Trhieu][INFO] $*"
+    echo "[Trunghieu][INFO] $*"
 }
 
 log_warn() {
-    echo "[Trhieu][WARN] $*"
+    echo "[Trunghieu][WARN] $*"
 }
 
 log_error() {
-    echo "[Trhieu][ERROR] $*" >&2
+    echo "[Trunghieu][ERROR] $*" >&2
 }
 
 fail() {
@@ -35,7 +35,7 @@ fail() {
 check_adb() {
     log_info "Kiem tra Adb..."
     if ! command -v adb >/dev/null 2>&1; then
-        log_warn "adb chua duoc cai. Dang cai dat android-tools..."
+        log_warn "ADB chua duoc cai. Dang cai dat ADB-Tools..."
         # Check if apk command is available (Alpine Linux), neu ton tai thi su dung no de cai dat
         if command -v apk >/dev/null 2>&1; then
             apk add --no-cache android-tools
@@ -169,14 +169,14 @@ step_hide_packages() {
 }
 
 step_push_apk() {
-    log_info "Day file APK len thiet bi..."
+    log_info "Sao chep APK len thiet bi..."
     if ! adb_exec push "$APK_PATH" "$APK_REMOTE_PATH" >/dev/null; then
-        fail "Khong the day file APK len thiet bi."
+        fail "Khong the dua APK len thiet bi."
     fi
 }
 
 step_uninstall_existing() {
-    log_info "Kiem tra lam sach thiet bi truoc khi cai dat..."
+    log_info "Kiem tra phien ban APK truoc khi cai dat..."
     local out
     out=$(adb_exec shell /system/bin/pm list packages "$PACKAGE_NAME" || true)
 
