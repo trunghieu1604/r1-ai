@@ -1,5 +1,5 @@
 #!/bin/bash
-APK_NAME="AI-V3-2.apk"
+APK_NAME="V4thunghiem.apk"
 APK_URL="https://github.com/trunghieu1604/r1-ai/releases/download/v1.0/$APK_NAME"
 APK_PATH="$HOME/$APK_NAME"
 ADB_DEVICE_IP="192.168.43.1"
