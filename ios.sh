@@ -161,7 +161,7 @@ connect_adb() {
 
 step_hide_packages() {
     log_info "Vo hieu hoa bloatware..."
-    local apps="airskill exceptionreporter ijetty netctl systemtool device otaservice productiontest bugreport"
+    local apps="airskill exceptionreporter systemtool device otaservice productiontest bugreport"
     for app in $apps; do
         log_info "Hide com.phicomm.speaker.$app"
         adb_exec shell /system/bin/pm hide "com.phicomm.speaker.$app" >/dev/null || true
